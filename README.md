@@ -10,7 +10,7 @@ Development was done with NodeJS, Express (backend: fibonacci-calculator) and An
 
 ### Installation and running instructions.
 
-First of all download and install the latest version of NodeJS from here: https://nodejs.org/en/.
+First of all download and install the latest LTS version of NodeJS from here: https://nodejs.org/en/ (currently is 18.12.1).
 
 Verify the installation with following commands:
 
@@ -46,7 +46,7 @@ npm install
 ng serve
 ```
 
-Now you should be able to use Fibonacci Calculator!!!
+Now you should be able to use Fibonacci Calculator, enjoy it!
 
 ### UI
 
