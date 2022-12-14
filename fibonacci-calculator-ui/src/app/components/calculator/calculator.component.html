@@ -1,0 +1,13 @@
+<div class="Message">
+  <div class="Title">
+    <h1>Realtime calculation</h1>
+    <h3>Provide the position of the sequence that you want to calculate</h3>
+  </div>
+</div>
+<input #position id="position" type="text" name="position" />
+<br /><br />
+<button id="calculate" type="button" (click)="calculate()">Calculate</button>
+<br /><br /><br />
+<div>Last calculation position:<span id="lastPosition"> {{lastPosition}}</span></div>
+<br />
+<div>Last calculation result:<span id="result"> {{lastResult}}</span></div>

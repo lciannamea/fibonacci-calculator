@@ -1,0 +1,149 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Fibonacci Calculator",
+    "description": "Fibonacci Calculator API",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:8000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Fibonacci",
+      "description": "API to interact with Fibonacci Calculator"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/fibonacci/{position}": {
+      "parameters": [
+        {
+          "name": "position",
+          "in": "path",
+          "required": true,
+          "description": "Position that we want to request in the Fibonacci sequence",
+          "type": "integer"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Fibonacci"
+        ],
+        "summary": "Get number at requested position in Fibonacci sequence",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      }
+    },
+    "/lastPosition": {
+      "get": {
+        "tags": [
+          "Fibonacci"
+        ],
+        "summary": "Get the position of last Fibonacci calculation",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      }
+    },
+    "/lastResult": {
+      "get": {
+        "tags": [
+          "Fibonacci"
+        ],
+        "summary": "Get the result of last Fibonacci calculation",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      }
+    },
+    "/history": {
+      "get": {
+        "tags": [
+          "Fibonacci"
+        ],
+        "summary": "Get the history of calculations",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Calculations"
+            }
+          }
+        }
+      }
+    },
+    "/numOfCalculations": {
+      "get": {
+        "tags": [
+          "Fibonacci"
+        ],
+        "summary": "Get the total number of Fibonacci calculations",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Result"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Result": {
+      "type": "number",
+      "$ref": "#/definitions/Result"
+    },
+    "Calculation": {
+      "type": "object",
+      "properties": {
+        "datetime": {
+          "type": "string"
+        },
+        "position": {
+          "type": "number"
+        },
+        "result": {
+          "type": "number"
+        }
+      },
+      "$ref": "#/definitions/Calculation"
+    },
+    "Calculations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "#/definitions/Calculation"
+      },
+      "$ref": "#/definitions/Calculations"
+    }
+  }
+}

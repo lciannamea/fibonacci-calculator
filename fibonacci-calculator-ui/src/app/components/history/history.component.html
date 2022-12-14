@@ -1,0 +1,20 @@
+<div class="Message">
+  <div class="Title">
+    <h1>Calculation history</h1>
+    <h3>Details of last executions</h3>
+  </div>
+  <table mat-table #history class="mat-elevation-z8">
+
+    <ng-container matColumnDef="{{column}}" *ngFor="let column of displayedColumns">
+      <th style="font-weight: bold;" mat-header-cell *matHeaderCellDef>{{column}}</th>
+      <td mat-cell *matCellDef="let element">
+        {{element[column]}}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator [pageSize]="5" showFirstLastButtons [pageSizeOptions]="[3, 5, 10]" #paginator></mat-paginator>
+</div>
