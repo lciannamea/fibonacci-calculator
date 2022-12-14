@@ -12,6 +12,19 @@ Development was done with NodeJS, Express (backend: fibonacci-calculator) and An
 
 First of all download and install the latest version of NodeJS from here: https://nodejs.org/en/.
 
+Verify the installation with following commands:
+
+```bash
+node -v
+npm -v
+```
+
+Open a terminal and install angular-cli on your machine as a global package:
+
+```bash
+npm install -g @angular/cli
+```
+
 Then clone the project, and startup both backend and frontend.
 
 #### BACKEND
